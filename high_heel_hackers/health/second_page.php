@@ -27,7 +27,7 @@ h2 {
 
 #header {
 	width: 100%;
-	height: 70px;
+	height: 100px;
 	position: relative;
 	top: -40px;
 	background-color: #7FC7AF;
@@ -78,7 +78,8 @@ p {
 
 
 body{
-	background-color:#917F7B;
+	background-image: url("includes/F.jpg");
+	background-size:100%;
 }
 
 
@@ -138,6 +139,7 @@ marquee{
 	padding-bottom:10px;
 	padding-left:5px;
 	padding-right:5px;
+	
 }
 .logout button{
 	float:right;
@@ -145,6 +147,7 @@ marquee{
 	background-color:black;
 	color:white;
 	font-size:20px;
+	
 }
 button{
 	background-color:black;
@@ -158,6 +161,7 @@ background-color:#383838;
 }
 form{
 	display:inline-block;
+	
 }
 </style>
 
@@ -210,7 +214,7 @@ form{
 </nav>
 
 <div class="main">
-<h2>Be aware of healthy diet for you</h2>
+<h2>WE CARE FOR YOU</h2>
 
 
 
@@ -224,23 +228,20 @@ $result=mysqli_query($conn,$sql);
 
 
 ?>
-<form class="submit-form" action="/health/includes/page.php" method="POST">
+<form class="submit-form" action="includes/page.php" method="POST">
 SELECT YOUR DISEASE  
- <select>
+ <select name="disease">
             <?php while($row1 = mysqli_fetch_array($result)):;?>
 
-            <li  name="disease"><?php echo $row1[0];?></li>
+            <option><?php echo $row1[0];?></option>
 
             <?php endwhile;?>
         </select>
-
-
 </select><br><br>
-
-
-
 <input type="submit" value="submit" name="submit"></input>
 </form>
+
+
 <form class="reset-form" action="includes/second_page_reset.inc.php" method="POST">
 <input type="submit" value="reset"></input><br>
 </form>
